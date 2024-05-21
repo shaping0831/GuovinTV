@@ -129,7 +129,10 @@ class UpdateSource:
                                     f"Name: {name}, URL: {url}, Date: {date}, Resolution: {resolution}, Response Time: {response_time}ms"
                                 )
                     if len(channelUrls[name]) == 0:
+                        print("*" * 20)
+                        print(channelObj[name])
                         channelUrls[name] = filterUrlsByPatterns(channelObj[name])
+                        print(channelUrls[name])
                 except:
                     continue
                 finally:
