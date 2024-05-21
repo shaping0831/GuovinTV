@@ -297,6 +297,7 @@ async def sortUrlsBySpeedAndResolution(infoList):
     Sort by speed and resolution
     """
     response_times = await asyncio.gather(*(getSpeed(url) for url, _, _ in infoList))
+    print(response_times)
     valid_responses = [
         (info, rt) for info, rt in zip(infoList, response_times) if rt != float("inf")
     ]
