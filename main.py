@@ -118,6 +118,8 @@ class UpdateSource:
                         or (pbar.n <= 200 and github_actions == "true")
                     ):
                         sorted_data = await sortUrlsBySpeedAndResolution(info_list)
+                        print("="*20)
+                        print(sorted_data)
                         if sorted_data:
                             channelUrls[name] = getTotalUrlsFromSortedData(sorted_data)
                             for (
@@ -128,6 +130,7 @@ class UpdateSource:
                                 logging.info(
                                     f"Name: {name}, URL: {url}, Date: {date}, Resolution: {resolution}, Response Time: {response_time}ms"
                                 )
+                    print(channelUrls[name])
                     if len(channelUrls[name]) == 0:
                         print("*" * 20)
                         print(channelObj[name])
